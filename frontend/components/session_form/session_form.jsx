@@ -9,6 +9,7 @@ class SessionForm extends React.Component{
       username: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
 
   update(field) {
@@ -20,6 +21,13 @@ class SessionForm extends React.Component{
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
+    this.props.processForm(user);
+  }
+
+  demoLogin(){
+    const user = { email:"demo@demo.co", password: "123456"};
+  //Explain: the demo login button is only accessible when on the login page
+  //Ergo - processForm will be login
     this.props.processForm(user);
   }
 
@@ -73,7 +81,13 @@ class SessionForm extends React.Component{
             <br/>
             <input className="session-submit" type="submit" value={this.props.formType} />
           </div>
+          <br/>
         </form>
+        {this.props.formType === 'login' ? (
+            <div>
+            <button onClick={this.demoLogin}>Demo Login</button>
+            </div>) : null }
+
       </div>
     );
   }
