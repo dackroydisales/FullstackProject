@@ -1,8 +1,9 @@
 import { connect } from 'react-redux';
-import { signup } from '../../actions/session_actions';
+import { signup, receiveErrors } from '../../actions/session_actions';
 import SessionForm from './session_form';
 import React from 'react';
 import { Link } from 'react-router-dom';
+
 
 const mS2P = ({errors}) => {
   return {
@@ -15,6 +16,7 @@ const mS2P = ({errors}) => {
 const mD2P = dispatch => {
   return {
     processForm: (user) => dispatch(signup(user)),
+    clearErrors: () => dispatch(receiveErrors([]))
   };
 }
 

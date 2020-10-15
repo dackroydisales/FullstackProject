@@ -10,7 +10,7 @@ import { AuthRoute } from '../util/route_util';
 const App = () => (
   <div>
     <header>
-      <h1>NuTube</h1>
+      <h1><img className='nutube-logo' src={window.tubelogoURL}/>NuTube</h1>
       <GreetingContainer />
     </header>
     <AuthRoute path="/login" component={LoginFormContainer} />
