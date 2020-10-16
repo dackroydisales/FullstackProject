@@ -54,7 +54,6 @@ class SessionForm extends React.Component{
           Welcome to NuTube!
           <br/>
           Please {this.props.formType} or {this.props.navLink}
-          {this.renderErrors()}
           <div className="login-form">
             <br/>
             {this.props.formType === 'signup' ? (
@@ -91,7 +90,7 @@ class SessionForm extends React.Component{
             <div>
             <button onClick={this.demoLogin}>Demo Login</button>
             </div>) : null }
-
+        {this.renderErrors()}
       </div>
     );
   }
