@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom';
 const mS2P = ({errors}) => {
   return {
     errors: errors.session,
-    formType: 'login',
-    navLink: <Link to="/signup">Sign Up</Link>,
+    formType: 'signin',
+    navLink: <Link to="/signup">Sign up</Link>,
   };
 }
 

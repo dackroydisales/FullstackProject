@@ -14,6 +14,14 @@
  *= require_self
  */
 
+html, body, header, nav, h1, a,
+ul, li, strong, main, button, i,
+section, img, div, h2, p, form,
+fieldset, label, input, textarea,
+span, article, footer, time, small {
+  font-family: 'Roboto', 'Arial', sans-serif;
+}
+
 .nutube-header {
   height: 56px;
   padding: 0 16px;
@@ -26,7 +34,7 @@
   padding-right: 76px; 
 }
 
-.logo-content-container-login {
+.logo-content-container-signin {
   padding-right: 0px;
 }
 
@@ -102,7 +110,7 @@
   height: 100%;
 }
 
-.login-form-container {
+.signin-form-container {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -112,19 +120,28 @@
   padding: 10px;
 }
 
-.login-form {
+.signin-form {
   display: flex;
   align-items: center;
   flex-direction: column;
   justify-content: center;
 }
 
-.login-form input[type=text], input[type=password] {
+.signin-form label {
+  display: flex;
+  justify-content: space-between;
+}
+
+.signin-form-description {
+  font-size: 24px;
+}
+
+.signin-form input[type=text], input[type=password] {
   border: 1px solid #dadce0;
   border-radius: 2px;
 }
 
-/* .login-form input[type=submit] {
+/* .signin-form input[type=submit] {
   background: blue;
   border-radius: 6px;
   color: white;

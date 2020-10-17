@@ -11,7 +11,7 @@ class SessionForm extends React.Component{
       username: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.demoLogin = this.demoLogin.bind(this);
+    this.demoSignIn = this.demoSignIn.bind(this);
   }
 
   componentWillUnmount() {
@@ -30,11 +30,15 @@ class SessionForm extends React.Component{
     this.props.processForm(user);
   }
 
-  demoLogin(){
+  demoSignIn(){
     const user = { email:"demo@demo.co", password: "123456"};
-  //Explain: the demo login button is only accessible when on the login page
-  //Ergo - processForm will be login
+  //Explain: the demo SignIn button is only accessible when on the SignIn page
+  //Ergo - processForm will be SignIn
     this.props.processForm(user);
+  }
+
+  formattedType(){
+    return this.props.formType === "signin" ? 'Sign in' : "Sign up";
   }
 
   renderErrors() {
@@ -52,47 +56,47 @@ class SessionForm extends React.Component{
     render() {
     return (
       <div className = 'session-center'>
-      <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form">
-          <Logo componentName='login' />
+      <div className="signin-form-container">
+        <form onSubmit={this.handleSubmit} className="signin-form">
+          <Logo componentName='signin' />
           <br/>
-          <div className="login-form-fields">
+          <p className = 'signin-form-description'>{this.formattedType()}</p>
+          <div className="signin-form-fields">
             <br/>
             {this.props.formType === 'signup' ? (
             <div>
-              <label>Username:
-                <input type="text"
+              <label>Username:&nbsp;
+                <input type="text" placeholder='Username'
                   value={this.state.username}
                   onChange={this.update('username')}
-                  className="login-username"
+                  className="signin-username"
                 />
               </label>
             <br/></div>) : null }
-            <label>Email:
-              <input type="text"
+            <label>Email: &nbsp;
+              <input type="text" placeholder='Email'
                 value={this.state.email}
                 onChange={this.update('email')}
-                className="login-input"
+                className="signin-input"
               />
             </label>
             <br/>
-            <label>Password:
-              <input type="password"
+            <label>Password: &nbsp;
+              <input type="password" placeholder='Password'
                 value={this.state.password}
                 onChange={this.update('password')}
-                className="login-input"
+                className="signin-input"
               />
             </label>
             <br/>
-            <input className="session-submit" type="submit" value=
-            {this.props.formType === "login" ? 'Login' : "Sign Up"} 
+            <input className="session-submit" type="submit" value={this.formattedType()}
             />
           </div>
           <br/>
         </form>
-        {this.props.formType === 'login' ? (
+        {this.props.formType === 'signin' ? (
         <div>
-        <button onClick={this.demoLogin}>Demo Login</button>
+        <button onClick={this.demoSignIn}>Demo sign in</button>
         </div>) : null }
             <div className='session-form-link'>{this.props.navLink}</div>
         <div className = "session-form-errors">{this.renderErrors()}</div>
