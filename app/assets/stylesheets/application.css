@@ -141,6 +141,18 @@ span, article, footer, time, small {
   border-radius: 2px;
 }
 
+.session-submit, .demo-signin {
+  background: #1a73e8;
+  color: white;
+  padding: 6px 24px;
+  border-radius: 2px;
+}
+
+.session-form-link {
+  color: #1a73e8;
+  padding: 6px;
+}
+
 /* .signin-form input[type=submit] {
   background: blue;
   border-radius: 6px;

@@ -89,16 +89,20 @@ class SessionForm extends React.Component{
               />
             </label>
             <br/>
-            <input className="session-submit" type="submit" value={this.formattedType()}
-            />
+            <label>
+            <input className="session-submit" type="submit" value={this.formattedType()}/>
+              <div className='session-form-link'>{this.props.navLink}</div>
+            </label>
+            <br/>
+            <label>
+            {this.props.formType === 'signin' ? (
+              <div>
+              <button className ='demo-signin' onClick={this.demoSignIn}>Demo sign in</button>
+              </div>) : null }
+            </label>
           </div>
           <br/>
         </form>
-        {this.props.formType === 'signin' ? (
-        <div>
-        <button onClick={this.demoSignIn}>Demo sign in</button>
-        </div>) : null }
-            <div className='session-form-link'>{this.props.navLink}</div>
         <div className = "session-form-errors">{this.renderErrors()}</div>
       </div>
       </div>
