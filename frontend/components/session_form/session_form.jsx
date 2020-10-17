@@ -97,7 +97,7 @@ class SessionForm extends React.Component{
             <label>
             {this.props.formType === 'signin' ? (
               <div>
-              <button className ='demo-signin' onClick={this.demoSignIn}>Demo sign in</button>
+              <button type='button' className ='demo-signin' onClick={this.demoSignIn}>Demo sign in</button>
               </div>) : null }
             </label>
           </div>
