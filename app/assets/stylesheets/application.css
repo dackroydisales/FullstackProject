@@ -22,20 +22,26 @@
   justify-content: space-between;
 }
 
+.logo-content-container-splash {
+  padding-right: 76px; 
+}
+
+.logo-content-container-login {
+  padding-right: 0px;
+}
+
 .logo-content {
   display: flex;
   flex-direction: row;
   position: relative;
-  margin-right: 76px; 
   /* extra margin for logo style */
 }
 
 .nutube-logo {
   height: 18px;
   width: 32px;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  position: relative;
+  bottom: 1px;
 } 
 
 .nutube-text {
@@ -43,9 +49,6 @@
   line-height: 18px;
   font-size: 20px;
   font-weight: 700;
-  position: relative;
-  left: 32px;
-  top: 1.3px;
 }
 
 /* form */
@@ -89,3 +92,40 @@
   margin: auto;
 }
 
+.session-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.login-form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 8px;
+  border: 1px solid #dadce0;
+  padding: 10px;
+}
+
+.login-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.login-form input[type=text], input[type=password] {
+  border: 1px solid #dadce0;
+  border-radius: 2px;
+}
+
+/* .login-form input[type=submit] {
+  background: blue;
+  border-radius: 6px;
+  color: white;
+} */

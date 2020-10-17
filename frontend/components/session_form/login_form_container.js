@@ -8,7 +8,7 @@ const mS2P = ({errors}) => {
   return {
     errors: errors.session,
     formType: 'login',
-    navLink: <Link to="/signup">Sign up instead</Link>,
+    navLink: <Link to="/signup">Sign Up</Link>,
   };
 }
 

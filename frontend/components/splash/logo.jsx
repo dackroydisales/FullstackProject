@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Logo = () => {
+const Logo = (props) => {
   return (
-    <Link to="/">
-      <h1 className='logo-content'>
+    <h1 className = {`logo-content-container-${props.componentName}`}>
+      <Link to="/" className='logo-content'>
         <img className='nutube-logo' src={window.tubelogoURL}/>
         <div className="nutube-text">NuTube</div>
-      </h1>
-    </Link>
-  )
+      </Link>
+    </h1>
+  ) 
 }
 
 export default Logo;

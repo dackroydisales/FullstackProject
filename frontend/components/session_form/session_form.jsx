@@ -1,4 +1,6 @@
 import React from 'react';
+import Logo from '../splash/logo'
+
 
 class SessionForm extends React.Component{
   constructor(props) {
@@ -49,12 +51,12 @@ class SessionForm extends React.Component{
 
     render() {
     return (
+      <div className = 'session-center'>
       <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to NuTube!
+        <form onSubmit={this.handleSubmit} className="login-form">
+          <Logo componentName='login' />
           <br/>
-          Please {this.props.formType} or {this.props.navLink}
-          <div className="login-form">
+          <div className="login-form-fields">
             <br/>
             {this.props.formType === 'signup' ? (
             <div>
@@ -82,15 +84,19 @@ class SessionForm extends React.Component{
               />
             </label>
             <br/>
-            <input className="session-submit" type="submit" value={this.props.formType} />
+            <input className="session-submit" type="submit" value=
+            {this.props.formType === "login" ? 'Login' : "Sign Up"} 
+            />
           </div>
           <br/>
         </form>
         {this.props.formType === 'login' ? (
-            <div>
-            <button onClick={this.demoLogin}>Demo Login</button>
-            </div>) : null }
-        {this.renderErrors()}
+        <div>
+        <button onClick={this.demoLogin}>Demo Login</button>
+        </div>) : null }
+            <div className='session-form-link'>{this.props.navLink}</div>
+        <div className = "session-form-errors">{this.renderErrors()}</div>
+      </div>
       </div>
     );
   }

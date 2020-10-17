@@ -6,7 +6,7 @@ import GreetingContainer from './greeting/greeting_container';
 const SplashPage = () => {
   return (
     <div className = 'nutube-header'>
-      <Logo />
+      <Logo componentName='splash'/>
       <SearchbarContainer />
       <GreetingContainer />
     </div>
