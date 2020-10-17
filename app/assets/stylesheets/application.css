@@ -22,7 +22,6 @@ span, article, footer, time, small {
   font-family: 'Roboto', 'Arial', sans-serif;
 }
 
-
 .nutube-header {
   height: 56px;
   padding: 0 16px;
@@ -50,7 +49,7 @@ span, article, footer, time, small {
   height: 18px;
   width: 32px;
   position: relative;
-  bottom: 1px;
+  bottom: 1.5px;
 } 
 
 .nutube-text {
@@ -66,11 +65,10 @@ span, article, footer, time, small {
   flex-direction: row;
   width: 500px;
   height: 30px;
-  border: 1px solid rgb(222, 222, 222);
   justify-content: space-between;
-  border-radius: 2px;
   margin-right: 70px;
 }
+
 
 /* inputs  */
 
@@ -83,23 +81,81 @@ span, article, footer, time, small {
   font-size: 16px;
   width: 100%;
   font-weight: 400;
-  margin-left: 4px;
   padding: 2px 6px;
+  border: 1px solid rgb(222, 222, 222);
+  border-radius: 2px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  
+}
+
+.video-search-text:focus {  
+  border: 1px solid #1c62b9;
+  border-radius: 2px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.3) inset;
+
 }
 
 .video-search-image-div {
-    border-left: 1px solid rgb(222, 222, 222);
     background-color: rgb(246, 246, 246);
+    border: 1px solid rgb(222, 222, 222);
     width: 65px;
     padding: 2px 6px;
     display: flex;
+    border-left: 0px;
+    border-radius: 2px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
   }
+
+.video-search-image-div:hover {
+  cursor: pointer;
+}
 
 .video-search-image {
   height: 14px;
-  display: block;
   margin: auto;
 }
+
+.session-login {
+  border: 1px solid #1c62b9;;
+  border-radius: 2px;
+  padding: 5px 11px;
+  font-size: 12px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.session-login img {
+  height: 24px;
+  width: 24px;
+}
+
+.session-login p {
+  margin-left: 8px;
+  color: #1c62b9;
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.user-icon {
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  background-color: green;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  padding: 5px;
+  border-radius: 20px;
+}
+
+
+
+
 
 .session-center {
   display: flex;
@@ -142,14 +198,28 @@ span, article, footer, time, small {
   border-radius: 2px;
 }
 
-.session-submit, .demo-signin {
-  background: #1a73e8;
-  color: white;
-  padding: 6px 24px;
+.signin-username:focus, .signin-email:focus, .signin-password:focus {
+  border: 1px solid #1c62b9;
   border-radius: 2px;
 }
 
+
+.session-submit, .demo-signin {
+  background: #1c62b9;
+  color: white;
+  border-radius: 2px;
+}
+
+.session-submit {
+    padding: 6px 10px;
+}
+
+.demo-signin {
+  padding: 10px 10px;
+}
+
 .session-form-link {
-  color: #1a73e8;
+  color: #1c62b9;
   padding: 6px;
 }
+

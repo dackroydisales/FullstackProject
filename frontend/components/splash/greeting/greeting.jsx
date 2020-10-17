@@ -8,20 +8,19 @@ const Greeting = ({currentUser, logout }) => {
   //helper method
   const sessionLinks = () => {
     return (
-      <nav className='login-signup'>
-        <Link to='/login'>Sign in</Link>
-        &nbsp;or&nbsp;
-        <Link to='/signup'>Sign up!</Link>
-      </nav>
+        <Link to='/login' className='session-login'>
+          <img src={window.signinlogoURL}></img>
+          <p>SIGN IN</p>
+        </Link>
     )
   };
 
   const personalGreeting = () => {
     return (
-      <hgroup className='header-group'>
-        <h2 className='header-name'>Hi, {currentUser.username}!</h2>
+      <div>
+        <h1 className='user-icon'>{currentUser.username.toUpperCase().charAt(0)}</h1>
         <button className='header-button' onClick={logout}>Log Out</button>
-      </hgroup>
+      </div>
     )
   };
 
