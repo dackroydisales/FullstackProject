@@ -1,3 +1,111 @@
 // Place all the styles related to the api/sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.session-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.signin-form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  border-radius: 8px;
+  border: 1px solid #dadce0;
+  padding: 10px;
+  width: 450px;
+  height: 500px;
+}
+
+.signin-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.logo-content-container-signin {
+  padding-right: 0px;
+}
+
+.logo-content-container-signin .nutube-logo {
+  height: 40px;
+  width: 71.1px;
+} 
+
+.logo-content-container-signin .nutube-text {
+  font-family: "PT Sans Narrow", sans-serif;
+  line-height: 40px;
+  font-size: 44px;
+  font-weight: 700;
+  margin-top: 2.5px;
+}
+
+
+.signin-form label, .signin-form span {
+  display: flex;
+  justify-content: space-between;
+}
+
+.signin-form-description {
+  font-size: 35px;
+}
+
+.signin-username, .signin-email, .signin-password {
+  border: 1px solid #dadce0;
+  border-radius: 2px;
+  font-size: 14px;
+  width: 300px;
+  padding: 10px;
+}
+
+.signin-username:focus, .signin-email:focus, .signin-password:focus {
+  border: 1px solid #1c62b9;
+  border-radius: 2px;
+}
+
+
+.session-submit, .demo-signin {
+  color: white;
+  border-radius: 2px;
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+.session-submit {
+  background:#1a73e8;
+}
+
+.session-submit:hover {
+  background: #1c62b9;
+}
+
+.demo-signin {
+  background: #d50000;
+}
+
+.demo-signin:hover {
+  background: #ab2121;  
+}
+
+.session-form-link {
+  color: #1a73e8;
+  padding: 6px;
+  font-size: 13px;
+}
+
+.session-form-errors {
+  width: 300px;
+  height: 70px;
+  color: #d50000;
+  font-size: 14px;
+}
+

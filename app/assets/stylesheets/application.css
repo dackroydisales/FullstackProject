@@ -34,10 +34,6 @@ span, article, footer, time, small {
   padding-right: 76px; 
 }
 
-.logo-content-container-signin {
-  padding-right: 0px;
-}
-
 .logo-content {
   display: flex;
   flex-direction: row;
@@ -171,10 +167,17 @@ span, article, footer, time, small {
   border: 1px solid rgba(0,0,0,.1);
   border-top: 0px;
   padding: 16px;
+  align-items: center;
 }
 
 .user-subicon {
-  margin-right: 15px;
+  width: 23px;
+  height: 23px;
+  line-height: 23px;
+  padding: 6px;
+  border-radius: 23px;
+  font-size: 18.4px;
+  margin-right: 12px;  
 }
 
 .dropdown-username {
@@ -191,86 +194,4 @@ span, article, footer, time, small {
 }
 
 
-
-.session-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-}
-
-.signin-form-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  border-radius: 8px;
-  border: 1px solid #dadce0;
-  padding: 10px;
-  width: 200px;
-  height: 300px;
-}
-
-.signin-form {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.signin-form label, .signin-form span {
-  display: flex;
-  justify-content: space-between;
-}
-
-.signin-form-description {
-  font-size: 24px;
-}
-
-.signin-username, .signin-email, .signin-password {
-  border: 1px solid #dadce0;
-  border-radius: 2px;
-}
-
-.signin-username:focus, .signin-email:focus, .signin-password:focus {
-  border: 1px solid #1c62b9;
-  border-radius: 2px;
-}
-
-
-.session-submit, .demo-signin {
-  color: white;
-  border-radius: 2px;
-  padding: 6px 10px;
-}
-
-.session-submit {
-  background:#1a73e8;
-}
-
-.session-submit:hover {
-  background: #1c62b9;
-}
-
-.demo-signin {
-  background: #d50000;
-}
-
-.demo-signin:hover {
-  background: #ab2121;  
-}
-
-.session-form-link {
-  color: #1a73e8;
-  padding: 6px;
-}
-
-.session-form-errors {
-  width: 150px;
-  height: 50px;
-  color: #d50000;
-}
 

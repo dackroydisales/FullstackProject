@@ -60,20 +60,24 @@ class SessionForm extends React.Component{
         <form onSubmit={this.handleSubmit} className="signin-form">
           <Logo componentName='signin' />
           <br/>
+          <br/>
           <p className = 'signin-form-description'>{this.formattedType()}</p>
+          <br/>
+          <br/>
+          <br/>
           <div className="signin-form-fields">
             <br/>
             {this.props.formType === 'signup' ? (
             <div>
-              <label>Username:
+              <label>
                 <input type="text" placeholder='Username'
                   value={this.state.username}
                   onChange={this.update('username')}
                   className="signin-username"
                 />
               </label>
-            <br/></div>) : null }
-            <label>Email:
+            <br/><br/></div>) : <span></span> }
+            <label>
               <input type="text" placeholder='Email'
                 value={this.state.email}
                 onChange={this.update('email')}
@@ -81,7 +85,8 @@ class SessionForm extends React.Component{
               />
             </label>
             <br/>
-            <label>Password:
+            <br/>
+            <label>
               <input type="password" placeholder='Password'
                 value={this.state.password}
                 onChange={this.update('password')}
@@ -89,20 +94,25 @@ class SessionForm extends React.Component{
               />
             </label>
             <br/>
+            <br/>
+            <br/>
             <span>
             <input className="session-submit" type="submit" value={this.formattedType()}/>
               <div className='session-form-link'>{this.props.navLink}</div>
             </span>
             <br/>
             <span>
+            <br/>
             {this.props.formType === 'signin' ? (
               <span>
               <button type='button' className ='demo-signin' onClick={this.demoSignIn}>Demo sign in</button>
-              </span>) : null }
+              </span>) : <span><br/></span> }
+            <br/>
             </span>
           </div>
           <br/>
         </form>
+        <br/>
         <div className = "session-form-errors">{this.renderErrors()}</div>
       </div>
       </div>

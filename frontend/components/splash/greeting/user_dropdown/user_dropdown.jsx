@@ -48,7 +48,7 @@ class UserDropdown extends React.Component {
             </p>
           </li>
           <li>
-            <button type = 'button' className = 'dropdown-logout' onClick={logout}>Log out</button>
+            <button type = 'button' className = 'dropdown-logout' onClick={logout}>Sign out</button>
           </li>
         </ul>}
       </div>
