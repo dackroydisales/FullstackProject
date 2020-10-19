@@ -46,7 +46,7 @@ class SessionForm extends React.Component{
       <ul>
         {this.props.errors.map((error, i) => (
           <li key={`error-${i}`}>
-            {error}
+            {`- ${error}`}
           </li>
         ))}
       </ul>
@@ -65,7 +65,7 @@ class SessionForm extends React.Component{
             <br/>
             {this.props.formType === 'signup' ? (
             <div>
-              <label>Username:&nbsp;
+              <label>Username:
                 <input type="text" placeholder='Username'
                   value={this.state.username}
                   onChange={this.update('username')}
@@ -73,7 +73,7 @@ class SessionForm extends React.Component{
                 />
               </label>
             <br/></div>) : null }
-            <label>Email: &nbsp;
+            <label>Email:
               <input type="text" placeholder='Email'
                 value={this.state.email}
                 onChange={this.update('email')}
@@ -81,7 +81,7 @@ class SessionForm extends React.Component{
               />
             </label>
             <br/>
-            <label>Password: &nbsp;
+            <label>Password:
               <input type="password" placeholder='Password'
                 value={this.state.password}
                 onChange={this.update('password')}

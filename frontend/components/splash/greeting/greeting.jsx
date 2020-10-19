@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import UserDropdownContainer from './user_dropdown/user_dropdown_container';
 
 //NB: takes in props via greeting_container
 //AKA: automating destructring
@@ -17,10 +18,10 @@ const Greeting = ({currentUser, logout }) => {
 
   const personalGreeting = () => {
     return (
-      <div>
-        <h1 className='user-icon'>{currentUser.username.toUpperCase().charAt(0)}</h1>
-        <button className='header-button' onClick={logout}>Log Out</button>
-      </div>
+      <UserDropdownContainer 
+        currentUser = {currentUser} 
+        userFirstLetter = {currentUser.username.toUpperCase().charAt(0)} 
+        logout = {logout}/>
     )
   };
 

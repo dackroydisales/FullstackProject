@@ -48,8 +48,6 @@ span, article, footer, time, small {
 .nutube-logo {
   height: 18px;
   width: 32px;
-  position: relative;
-  bottom: 1.5px;
 } 
 
 .nutube-text {
@@ -57,6 +55,7 @@ span, article, footer, time, small {
   line-height: 18px;
   font-size: 20px;
   font-weight: 700;
+  margin-top: 1.5px;
 }
 
 /* form */
@@ -141,6 +140,11 @@ span, article, footer, time, small {
   font-weight: 600;
 }
 
+.user-icon-container {
+  position: relative;
+  display: inline-block;
+}
+
 .user-icon {
   font-size: 16px;
   color: white;
@@ -151,9 +155,40 @@ span, article, footer, time, small {
   line-height: 20px;
   padding: 5px;
   border-radius: 20px;
+  cursor: pointer;
 }
 
+.user-icon-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: 200px;
+}
 
+.user-icon-dropdown li {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid rgba(0,0,0,.1);
+  border-top: 0px;
+  padding: 16px;
+}
+
+.user-subicon {
+  margin-right: 15px;
+}
+
+.dropdown-username {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.dropdown-email {
+  font-size: 14px;
+}
+
+.dropdown-logout {
+  font-size: 14px;
+}
 
 
 
@@ -175,6 +210,8 @@ span, article, footer, time, small {
   border-radius: 8px;
   border: 1px solid #dadce0;
   padding: 10px;
+  width: 200px;
+  height: 300px;
 }
 
 .signin-form {
@@ -205,21 +242,35 @@ span, article, footer, time, small {
 
 
 .session-submit, .demo-signin {
-  background: #1c62b9;
   color: white;
   border-radius: 2px;
+  padding: 6px 10px;
 }
 
 .session-submit {
-    padding: 6px 10px;
+  background:#1a73e8;
+}
+
+.session-submit:hover {
+  background: #1c62b9;
 }
 
 .demo-signin {
-  padding: 10px 10px;
+  background: #d50000;
+}
+
+.demo-signin:hover {
+  background: #ab2121;  
 }
 
 .session-form-link {
-  color: #1c62b9;
+  color: #1a73e8;
   padding: 6px;
+}
+
+.session-form-errors {
+  width: 150px;
+  height: 50px;
+  color: #d50000;
 }
 
