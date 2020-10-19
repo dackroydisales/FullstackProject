@@ -41,15 +41,15 @@ class SessionForm extends React.Component{
     return this.props.formType === "signin" ? 'Sign in' : "Sign up";
   }
 
-  renderErrors() {
+  renderErrors(field) {
     return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {`- ${error}`}
-          </li>
-        ))}
-      </ul>
+      <div>
+      {this.props.errors.map((error, i) =>
+          (
+            error.toLowerCase().includes(field) ? error: null
+          )
+      )}
+      </div>
     );
   }
 
@@ -76,7 +76,10 @@ class SessionForm extends React.Component{
                   className="signin-username"
                 />
               </label>
-            <br/><br/></div>) : <span></span> }
+            <div className='session-form-errors'>{this.renderErrors('username')}</div>
+            <br/>
+            </div>) : <span></span> }
+
             <label>
               <input type="text" placeholder='Email'
                 value={this.state.email}
@@ -84,7 +87,7 @@ class SessionForm extends React.Component{
                 className="signin-email"
               />
             </label>
-            <br/>
+            <div className='session-form-errors'>{this.renderErrors('email')}</div>
             <br/>
             <label>
               <input type="password" placeholder='Password'
@@ -93,8 +96,7 @@ class SessionForm extends React.Component{
                 className="signin-password"
               />
             </label>
-            <br/>
-            <br/>
+            <div className='session-form-errors'>{this.renderErrors('password')}</div>
             <br/>
             <span>
             <input className="session-submit" type="submit" value={this.formattedType()}/>
@@ -106,14 +108,13 @@ class SessionForm extends React.Component{
             {this.props.formType === 'signin' ? (
               <span>
               <button type='button' className ='demo-signin' onClick={this.demoSignIn}>Demo sign in</button>
-              </span>) : <span><br/></span> }
+              </span>) : <span></span> }
             <br/>
             </span>
           </div>
           <br/>
         </form>
         <br/>
-        <div className = "session-form-errors">{this.renderErrors()}</div>
       </div>
       </div>
     );

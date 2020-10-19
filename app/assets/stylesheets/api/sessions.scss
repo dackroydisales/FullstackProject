@@ -21,8 +21,8 @@
   border-radius: 8px;
   border: 1px solid #dadce0;
   padding: 20px 10px;
-  width: 450px;
-  height: 500px;
+  width: 420px;
+  height: 450px;
 }
 
 .signin-form {
@@ -77,7 +77,7 @@
   color: white;
   border-radius: 2px;
   padding: 6px 10px;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .session-submit {
@@ -90,6 +90,7 @@
 
 .demo-signin {
   background: #d50000;
+  margin-top: 56px;
 }
 
 .demo-signin:hover {
@@ -99,13 +100,14 @@
 .session-form-link {
   color: #1a73e8;
   padding: 6px;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .session-form-errors {
-  width: 300px;
-  height: 70px;
   color: #d50000;
-  font-size: 14px;
+  font-size: 14.5px;
+  height: 20px;
+  margin-left: 5px;
+  margin-top: 5px;
 }
 
