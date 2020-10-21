@@ -22,6 +22,11 @@ span, article, footer, time, small {
   font-family: 'Roboto', 'Arial', sans-serif;
 }
 
+.splash-page-container {
+  display: flex;
+  flex-direction: column;
+}
+
 .nutube-header {
   height: 56px;
   padding: 0 16px;
@@ -160,6 +165,7 @@ span, article, footer, time, small {
   top: 100%;
   right: 0;
   min-width: 200px;
+  background-color: white;
 }
 
 .user-icon-dropdown li {
@@ -196,3 +202,31 @@ span, article, footer, time, small {
 
 
 
+
+
+.video-index {
+  padding: 0px 16px;
+  height: 100%;
+  display: flex;
+  max-width: 760px;
+  flex-wrap: wrap;
+}
+
+.video-index > li {
+  padding: 10px 30px;
+}
+
+.video-thumbnail {
+  height: 240px;
+  width: 320px;
+}
+
+.video-title {
+  font-size: 14px;
+  font-weight: bold;
+  max-width: 320px;
+}
+
+.video-uploader {
+  font-size: 14px;
+}
