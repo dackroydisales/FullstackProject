@@ -7,8 +7,8 @@ const VideoIndexItem = (props) => {
         <li>
           <Link to={`/videos/${video.id}`}>
           <img className = "video-thumbnail" src={video.thumbnailURL} />
-          <div className = "video-title">{video.title}</div>
-          <div className = "video-uploader">Uploaded by {video.uploader.username}</div>
+          <div className = "video-title-index">{video.title}</div>
+          <div className = "video-uploader-index">{video.uploader}</div>
           </Link>
         </li>
   )

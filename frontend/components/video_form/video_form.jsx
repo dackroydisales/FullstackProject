@@ -50,6 +50,7 @@ class VideoForm extends React.Component {
     e.preventDefault();
     const formData = new FormData();
     formData.append('video[title]', this.state.title);
+    formData.append('video[uploader_id]', window.currentUser.id);
     if(this.state.videoFile) {
       formData.append('video[video]', this.state.videoFile);
     }
@@ -71,7 +72,6 @@ class VideoForm extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div className="video-submit-container">
         <Navbar/>

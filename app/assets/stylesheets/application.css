@@ -22,7 +22,7 @@ span, article, footer, time, small {
   font-family: 'Roboto', 'Arial', sans-serif;
 }
 
-.splash-page-container, .video-page-show-container {
+.splash-page-container {
   display: flex;
   flex-direction: column;
 }
@@ -221,12 +221,44 @@ span, article, footer, time, small {
   width: 480px;
 }
 
-.video-title {
+.video-title-index {
   font-size: 14px;
   font-weight: bold;
   max-width: 320px;
 }
 
-.video-uploader {
+.video-uploader-index {
   font-size: 14px;
+}
+
+
+
+.video-show-page-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.video-show-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 50px;
+}
+
+.video-description-container {
+  margin-top: 20px;
+  width: 640px;
+}
+
+.video-title-show {
+  font-size: 26px;
+  padding-bottom: 10px;
+}
+
+.video-uploader-show {
+  font-size: 14px;
+  font-weight: bold;
 }

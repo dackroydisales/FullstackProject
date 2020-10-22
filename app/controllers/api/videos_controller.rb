@@ -10,6 +10,11 @@ class Api::VideosController < ApplicationController
   end
 
   def create
-    
+
+  end
+
+  private
+  def video_params
+    params.require(:video).permit(:title, :uploader_id, :video, :thumbnail)
   end
 end

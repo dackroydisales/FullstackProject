@@ -2,9 +2,11 @@ import { connect } from 'react-redux';
 import { getVideoIndex } from '../../actions/video_actions';
 import VideoIndex from './video_index';
 
-const mS2P = ({entities: {videos = {} }}) => {
+// const mS2P = ({entities: {videos = {} }}) => {
+
+const mS2P = (state) => {
   return {
-    videos: videos
+    videos: state.entities.videos
   };
 }
 

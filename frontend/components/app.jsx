@@ -6,7 +6,7 @@ import SignupFormContainer from './session_form/signup_form_container';
 import SplashPageContainer from './splash/splash_page_container';
 import VideoPageContainer from './video_page/video_page_container'
 import VideoForm from './video_form/video_form'
-import { AuthRoute } from '../util/route_util';
+import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 
 //NB: also functional component
@@ -15,7 +15,7 @@ const App = () => (
     <Switch>
       <AuthRoute exact path="/login" component={SignInFormContainer} />
       <AuthRoute exact path="/signup" component={SignupFormContainer} />
-      <Route exact path = "/videos/new" component={VideoForm} />
+      <ProtectedRoute exact path = "/videos/new" component={VideoForm} />
       <Route exact path = "/videos/:videoId" component={VideoPageContainer} />
       <Route path = "/" component = {SplashPageContainer} />
     </Switch>

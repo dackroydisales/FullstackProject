@@ -12,7 +12,8 @@ class VideoIndex extends React.Component {
 
   render() {
     let { videos } = this.props;
-    return videos === {} ? null: (
+    if(!videos) {return null;}
+    return (
     <ul className="video-index">
       {Object.values(videos).map(video => (
         <VideoIndexItem video={video} key={video.title} />
