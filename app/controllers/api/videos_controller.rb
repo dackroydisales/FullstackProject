@@ -8,4 +8,8 @@ class Api::VideosController < ApplicationController
     @videos = Video.all
     render :index
   end
+
+  def create
+    
+  end
 end

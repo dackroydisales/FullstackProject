@@ -208,7 +208,6 @@ span, article, footer, time, small {
   padding: 0px 16px;
   height: 100%;
   display: flex;
-  max-width: 760px;
   flex-wrap: wrap;
 }
 
