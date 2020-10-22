@@ -22,7 +22,7 @@ span, article, footer, time, small {
   font-family: 'Roboto', 'Arial', sans-serif;
 }
 
-.splash-page-container {
+.splash-page-container, .video-page-show-container {
   display: flex;
   flex-direction: column;
 }
@@ -209,6 +209,7 @@ span, article, footer, time, small {
   height: 100%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .video-index > li {
@@ -216,8 +217,8 @@ span, article, footer, time, small {
 }
 
 .video-thumbnail {
-  height: 240px;
-  width: 320px;
+  height: 270px;
+  width: 480px;
 }
 
 .video-title {

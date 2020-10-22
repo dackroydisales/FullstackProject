@@ -17,7 +17,7 @@ class VideoPage extends React.Component {
       <div className="video-show-page-container">
         <Navbar/>
         <div className = 'video-show-container'>
-          <video autoPlay controls poster = {video.thumbnailURL} className = "video-show" src={video.videoURL} />
+          <video autoPlay controls width="640" height="360" poster = {video.thumbnailURL} className = "video-show" src={video.videoURL} />
           <div className = "video-title">{video.title}</div>
           <div className = "video-uploader">Uploaded by {video.uploader.username}</div>
           </div>
