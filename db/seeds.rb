@@ -150,21 +150,6 @@ vid12 = open('https://dackroydisales-nutube-dev.s3-us-west-1.amazonaws.com/video
 video12.video_file.attach(io: vid12, filename: 'monkeys.mp4')
 video12.thumbnail.attach(io: thumb12, filename: 'monkeys.jpg')
 
-
-# -----------------------------------
-
-
-video12 = Video.create!({
-  title: "Monkeys DIVE Into Pool For Fun | Primates | BBC Earth",
-  uploader_id:  onepun.id
-})
-
-thumb12 = open('https://dackroydisales-nutube-dev.s3-us-west-1.amazonaws.com/thumbnails/monkeys.jpg')
-vid12 = open('https://dackroydisales-nutube-dev.s3-us-west-1.amazonaws.com/videos/monkeys.mp4')
-video12.video_file.attach(io: vid12, filename: 'monkeys.mp4')
-video12.thumbnail.attach(io: thumb12, filename: 'monkeys.jpg')
-
-
 # -----------------------------------
 
 
