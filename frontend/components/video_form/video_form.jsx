@@ -6,10 +6,33 @@ class VideoForm extends React.Component {
   constructor(props) {
     super(props);
     
+    this.state = {
+      title: "",
+      videoFile: null,
+      videoUrl: null,
+      thumbnailFile: null,
+      thumbnailUrl: null
+    }
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.handleVideoFile =  this.handleVideoFile.bind(this);
     this.handleThumbnailFile =  this.handleThumbnailFile.bind(this);
+  }
+
+  componentDidMount()
+  {
+    if(this.props.formType === "Edit")
+    {
+      this.fetchVideo(this.props.match.params.videoId)
+      .then(this.setState({
+        title: this.props.title,
+        videoFile: this.props.videoFile,
+        videoUrl: this.props.videoUrl,
+        thumbnailFile: this.props.thumbnailFile,
+        thumbnailUrl: this.props.thumbnailUrl
+      }));
+    }
   }
   
   handleInput(e) {
@@ -44,21 +67,21 @@ class VideoForm extends React.Component {
     e.preventDefault();
     const formData = new FormData();
     formData.append('video[title]', this.state.title);
-    formData.append('video[uploader_id]', this.state.uploader_id);
+    formData.append('video[uploader_id]', this.props.uploader_id);
     if(this.state.videoFile) {
-      formData.append('video[video]', this.state.videoFile);
+      formData.append('video[video_file]', this.state.videoFile);
     }
     if(this.state.thumbnailFile) {
       formData.append('video[thumbnail]', this.state.thumbnailFile);
     }
-    $.ajax({
+    $.ajax({ //video_actions.js
       url: '/api/videos',
       method: 'POST',
       data: formData,
       contentType: false,
       processData: false
     }).then(
-      (response) => console.log(response.message),
+      () => {}, //update the history object, this.props.history.replace(“/videos/${video.id}”)
       (response) => {
         console.log(response.responseJSON);
       }

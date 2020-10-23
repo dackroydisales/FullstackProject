@@ -11,17 +11,15 @@ class Api::VideosController < ApplicationController
 
   def create
     @video = Video.new(video_params)
-    # probably attach video file and thumbnail file separately
     if @video.save
-      # redirect to video show page
       render "/api/videos/show"
     else
-      render json: @user.errors.full_messages, status: 422
+      render json: @video.errors.full_messages, status: 422
     end
   end
 
   private
   def video_params
-    params.require(:video).permit(:title, :uploader_id, :video, :thumbnail)
+    params.require(:video).permit(:title, :uploader_id, :video_file, :thumbnail)
   end
 end

@@ -46,19 +46,6 @@ video4.thumbnail.attach(io: thumb4, filename: 'chameleon.jpg')
 # -----------------------------------
 
 
-video5 = Video.create!({
-  title: "Chimpanzee Gets A Hair Cut | Walk On The Wild Side | Funny Talking Animals | BBC Earth",
-  uploader_id:  onepun.id
-})
-
-thumb5 = open('https://dackroydisales-nutube-dev.s3-us-west-1.amazonaws.com/thumbnails/chimp.jpg')
-vid5 = open('https://dackroydisales-nutube-dev.s3-us-west-1.amazonaws.com/videos/chimp.mp4')
-video5.video_file.attach(io: vid5, filename: 'chimp.mp4')
-video5.thumbnail.attach(io: thumb5, filename: 'chimp.jpg')
-
-# -----------------------------------
-
-
 video6 = Video.create!({
   title: "One Hundred Million Crabs | The Trials of Life | BBC Earth",
   uploader_id:  onepun.id
@@ -108,20 +95,6 @@ thumb9 = open('https://dackroydisales-nutube-dev.s3-us-west-1.amazonaws.com/thum
 vid9 = open('https://dackroydisales-nutube-dev.s3-us-west-1.amazonaws.com/videos/lions.mp4')
 video9.video_file.attach(io: vid9, filename: 'lions.mp4')
 video9.thumbnail.attach(io: thumb9, filename: 'lions.jpg')
-
-# -----------------------------------
-
-
-video10 = Video.create!({
-  title: "The TOTALLY Invisible Lizard | Walk On The Wild Side | Funny Talking Animals | BBC Earth",
-  uploader_id:  onepun.id
-})
-
-thumb10 = open('https://dackroydisales-nutube-dev.s3-us-west-1.amazonaws.com/thumbnails/lizard.jpg')
-vid10 = open('https://dackroydisales-nutube-dev.s3-us-west-1.amazonaws.com/videos/lizard.mp4')
-video10.video_file.attach(io: vid10, filename: 'lizard.mp4')
-video10.thumbnail.attach(io: thumb10, filename: 'lizard.jpg')
-
 
 # -----------------------------------
 
@@ -188,20 +161,6 @@ thumb15 = open('https://dackroydisales-nutube-dev.s3-us-west-1.amazonaws.com/thu
 vid15 = open('https://dackroydisales-nutube-dev.s3-us-west-1.amazonaws.com/videos/squid.mp4')
 video15.video_file.attach(io: vid15, filename: 'squid.mp4')
 video15.thumbnail.attach(io: thumb15, filename: 'squid.jpg')
-
-
-# -----------------------------------
-
-
-video16 = Video.create!({
-  title: "A Snow Tiger Complaining About Snow | Walk On The Wild Side | Funny Talking Animals | BBC Earth",
-  uploader_id:  onepun.id
-})
-
-thumb16 = open('https://dackroydisales-nutube-dev.s3-us-west-1.amazonaws.com/thumbnails/tiger.jpg')
-vid16 = open('https://dackroydisales-nutube-dev.s3-us-west-1.amazonaws.com/videos/tiger.mp4')
-video16.video_file.attach(io: vid16, filename: 'tiger.mp4')
-video16.thumbnail.attach(io: thumb16, filename: 'tiger.jpg')
 
 
 # -----------------------------------

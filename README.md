@@ -32,11 +32,11 @@ NuTube is a single-page full-stack app using:
 - HTML5 / CSS
 - PostgreSQL
 
-NuTube is a single-page app built on the React JavaScript library. The React Router JavaScript library manages user navigation and rendering of HTML. Database AJAX queries are handled by Rails and return JSON structures which are incorporated into the Redux state. 
+NuTube is a single-page app built on the React JavaScript library. The React Router JavaScript library is used to manage user navigation. The Rails API is queried with AJAX requests and returns JSON structures which are incorporated into the Redux state. 
 
 ## Development Insights
 
-One of the most difficult design elements of NuTube was using Rails to mediate asynchronous database queries from Redux. JBuilder is used to update the state of our React components.
+One of the most difficult design elements of NuTube was using the Rails API to perform database queries. JBuilder responses are sent from Rails to Redux and are used to update the state of our React components.
 
 ```rb
 
