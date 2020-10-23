@@ -100,6 +100,6 @@ class UserDropdown extends React.Component {
 
   - Search for videos
   - Comment on videos
-  - Like videos and comments
+  - Like/dislike videos and comments
   - Display the number of plays for a video
   - Channel pages
