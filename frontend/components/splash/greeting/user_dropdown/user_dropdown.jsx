@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class UserDropdown extends React.Component {
   constructor(props)
@@ -46,6 +47,9 @@ class UserDropdown extends React.Component {
               <br /> 
               <span className = 'dropdown-email'>{currentUser.email}</span>
             </p>
+          </li>
+          <li>
+            <Link to='/videos/new' className = 'upload-link'>Upload video</Link>
           </li>
           <li>
             <button type = 'button' className = 'dropdown-logout' onClick={logout}>Sign out</button>

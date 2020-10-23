@@ -1,17 +1,11 @@
 import React from 'react';
 import Navbar from '../splash/navbar';
+import Logo from '../splash/logo';
 
 class VideoForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      title: "",
-      videoFile: null,
-      videoUrl: null,
-      thumbnailFile: null,
-      thumbnailUrl: null
-    }
-
+    
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleInput = this.handleInput.bind(this);
     this.handleVideoFile =  this.handleVideoFile.bind(this);
@@ -50,7 +44,7 @@ class VideoForm extends React.Component {
     e.preventDefault();
     const formData = new FormData();
     formData.append('video[title]', this.state.title);
-    formData.append('video[uploader_id]', window.currentUser.id);
+    formData.append('video[uploader_id]', this.state.uploader_id);
     if(this.state.videoFile) {
       formData.append('video[video]', this.state.videoFile);
     }
@@ -75,20 +69,25 @@ class VideoForm extends React.Component {
     return (
       <div className="video-submit-container">
         <Navbar/>
-        <form onSubmit={this.handleSubmit}>
-          <h1>Upload Video</h1>
-          <input type="text" placeholder='Title'
-            onChange={this.handleInput}/>
-          <label> Video File:
-          <input type="file"
-            onChange={this.handleVideoFile}/>
-          </label>
-          <label> Thumbnail File:
-          <input type="file"
-            onChange={this.handleThumbnailFile}/>
-          </label>
-          <button>Upload Video</button>
-        </form>
+        <div className='video-submit-form-container'>
+          <form onSubmit={this.handleSubmit} className = "video-submit-form">
+            <Logo componentName='submit'/>
+            <h1 className='video-submit-description'>Upload Video</h1>
+            <input type="text" placeholder='Title' className = "video-submit-title"
+              onChange={this.handleInput}/>
+            <div className = "video-submit-file-submits">
+              <label> Video File<br/>
+              <input type="file" className="video-submit-video-file" placeholder='Video File'
+                onChange={this.handleVideoFile}/>
+              </label><br/>
+              <label> Thumbnail File<br/>
+              <input type="file" className="video-submit-thumbnail-file"
+                onChange={this.handleThumbnailFile}/>
+              </label>
+            </div>
+            <button className = "video-submit">Upload Video</button>
+          </form>
+          </div>
       </div>
     )
   }
