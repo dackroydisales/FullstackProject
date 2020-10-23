@@ -68,7 +68,7 @@ One of the most difficult design elements of NuTube was using Rails to mediate a
 
 Another key element of the NuTube interface is the user's dropdown menu while they are logged in - in particular, having the menu disappear when the user clicks elsewhere on the page. 
 
-This feature was implemented by adding a document event listener that is invoked by mousedowns anywhere in the document, and uses state to hide the menu.
+This feature was implemented by adding a document event listener on mousedowns when the UserDropdown component mounts, which updates the state of UserDropdown component depending on where the mousedown event occurred.
 
 ```js
 class UserDropdown extends React.Component {
