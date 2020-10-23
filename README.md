@@ -22,6 +22,15 @@
  
  • Upload your videos to NuTube
 
+
+  <img src="video_page.png" alt="Video Page" width="650">
+
+
+
+<img src="dropdown_menu.png" alt="Dropdown Menu" width="650">
+
+<h1></h1>
+
 ## How NuTube Was Built
 
 NuTube is a single-page full-stack app using:
