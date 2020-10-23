@@ -17,7 +17,9 @@
 ## Key Features
 
  • User account creation and login
+
  • Watch videos
+ 
  • Upload your videos to NuTube
 
 ## How NuTube Was Built
@@ -100,4 +102,4 @@ class UserDropdown extends React.Component {
   - Comment on videos
   - Like videos and comments
   - Display the number of plays for a video
-  - Channel pages (and subscriptions!)
+  - Channel pages
