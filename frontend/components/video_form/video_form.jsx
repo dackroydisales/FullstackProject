@@ -81,7 +81,7 @@ class VideoForm extends React.Component {
       contentType: false,
       processData: false
     }).then(
-      () => {}, //update the history object, this.props.history.replace(“/videos/${video.id}”)
+      (video) => this.props.history.push(`/videos/${video.id}`), //update the history object, this.props.history.replace(“/videos/${video.id}”)
       (response) => {
         console.log(response.responseJSON);
       }
