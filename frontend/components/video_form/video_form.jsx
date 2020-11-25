@@ -74,7 +74,7 @@ class VideoForm extends React.Component {
     if(this.state.thumbnailFile) {
       formData.append('video[thumbnail]', this.state.thumbnailFile);
     }
-    $.ajax({ //video_actions.js
+    $.ajax({ //TODO: move to video_actions.js
       url: '/api/videos',
       method: 'POST',
       data: formData,

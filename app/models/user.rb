@@ -2,9 +2,18 @@ class User < ApplicationRecord
 
   attr_reader :password
 
-  validates :username, :email, :password_digest, :session_token, presence: true
-  validates :email, :username, uniqueness: true
+  validates :username, 
+    presence: true, 
+    uniqueness: true
+  validates :email, 
+    presence: true, 
+    uniqueness: true
+
+  validates_with EmailAddress::ActiveRecordValidator, field: :email
+
   validates :password, length: { minimum: 6 }, allow_nil: true
+
+  validates :password_digest, :session_token, presence: true
 
   has_many :videos, foreign_key: :uploader_id
 
