@@ -13,7 +13,8 @@ class VideoForm extends React.Component {
       thumbnailFile: null,
       thumbnailUrl: null,
 
-      upload_files_errors: ""
+      upload_files_errors: "",
+      showModal: false
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -76,15 +77,27 @@ class VideoForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.setState({showModal: true});
     if(this.state.videoFile === null)
     {
-      this.setState({upload_files_errors: "Video file required"});
+      this.setState({
+        upload_files_errors: "Video file required",
+        showModal: false
+      });
       return
     } else if(this.state.thumbnailFile === null)
     {
-      this.setState({upload_files_errors: "Thumbnail file required"});
+      this.setState({
+        upload_files_errors: "Thumbnail file required",
+        showModal: false
+      });
       return
-    } else {
+    } else if(this.state.title.length < 2){//NB: does not display under title
+      this.setState({ 
+        upload_files_errors: "Title must be at least 2 characters",
+        showModal: false});
+      return
+    }else {
       this.setState({upload_files_errors: ""});
     }
     const formData = new FormData();
@@ -94,11 +107,20 @@ class VideoForm extends React.Component {
     formData.append('video[thumbnail]', this.state.thumbnailFile);
 
     this.props.createVideo(formData).then(
-      (videoId => this.props.history.push(`/videos/${videoId}`)));
-    // debugger
+      videoId => {
+        this.props.history.push(`/videos/${videoId}`);
+        },
+      err => this.setState({showModal: false})
+      );
   }
 
   render() {
+
+    let modalShow = () => {
+      return (this.state.showModal ? (<div>
+        Under construction
+      </div>) : null)
+    }
 
     let upload_files_errors = () => {
       return (
@@ -128,6 +150,7 @@ class VideoForm extends React.Component {
             <button className = "video-submit">Upload Video</button>
           </form>
           </div>
+          {modalShow()}
       </div>
     )
   }
