@@ -12,8 +12,8 @@ User.delete_all
 demo = User.create!(username: 'Demo', email: 'demo@demo.co', password: '123456')
 # END DEMO CREDENTIAL
 
-hello_world = User.create!(username: 'hello', email: 'a@z', password: 'world!')
-onepun = User.create!(username: '1punman', email: 'saitama', password: 'password')
+hello_world = User.create!(username: 'hello', email: 'a@z.com', password: 'world!')
+onepun = User.create!(username: '1punman', email: 'saitama@saitama.com', password: 'password')
 
 Video.delete_all
 

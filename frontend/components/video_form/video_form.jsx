@@ -11,7 +11,9 @@ class VideoForm extends React.Component {
       videoFile: null,
       videoUrl: null,
       thumbnailFile: null,
-      thumbnailUrl: null
+      thumbnailUrl: null,
+
+      upload_files_errors: ""
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -34,12 +36,19 @@ class VideoForm extends React.Component {
       }));
     }
   }
+
+  componentWillUnmount()
+  {
+    this.props.clearErrors();
+  }
   
   handleInput(e) {
     this.setState({title: e.currentTarget.value});
   }
 
   handleVideoFile(e) {
+    this.state.upload_files_errors = "";
+
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
     fileReader.onloadend = () => {
@@ -52,6 +61,8 @@ class VideoForm extends React.Component {
   }
 
   handleThumbnailFile(e) {
+    this.state.upload_files_errors = "";
+
     const file = e.currentTarget.files[0];
     const fileReader = new FileReader();
     fileReader.onloadend = () => {
@@ -65,30 +76,34 @@ class VideoForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    if(this.state.videoFile === null)
+    {
+      this.setState({upload_files_errors: "Video file required"});
+      return
+    } else if(this.state.thumbnailFile === null)
+    {
+      this.setState({upload_files_errors: "Thumbnail file required"});
+      return
+    } else {
+      this.setState({upload_files_errors: ""});
+    }
     const formData = new FormData();
     formData.append('video[title]', this.state.title);
     formData.append('video[uploader_id]', this.props.uploader_id);
-    if(this.state.videoFile) {
-      formData.append('video[video_file]', this.state.videoFile);
-    }
-    if(this.state.thumbnailFile) {
-      formData.append('video[thumbnail]', this.state.thumbnailFile);
-    }
-    $.ajax({ //TODO: move to video_actions.js
-      url: '/api/videos',
-      method: 'POST',
-      data: formData,
-      contentType: false,
-      processData: false
-    }).then(
-      (video) => this.props.history.push(`/videos/${video.id}`), //update the history object, this.props.history.replace(“/videos/${video.id}”)
-      (response) => {
-        console.log(response.responseJSON);
-      }
-    );
+    formData.append('video[video_file]', this.state.videoFile);
+    formData.append('video[thumbnail]', this.state.thumbnailFile);
+
+    this.props.createVideo(formData).then(
+      (videoId => this.props.history.push(`/videos/${videoId}`)));
+    // debugger
   }
 
   render() {
+
+    let upload_files_errors = () => {
+      return (
+      <p className = "video-form-errors">{this.state.upload_files_errors}</p>)
+    }
     return (
       <div className="video-submit-container">
         <Navbar/>
@@ -98,6 +113,7 @@ class VideoForm extends React.Component {
             <h1 className='video-submit-description'>Upload Video</h1>
             <input type="text" placeholder='Title' className = "video-submit-title"
               onChange={this.handleInput}/>
+            <p className='video-form-errors'>{this.props.errors}</p>
             <div className = "video-submit-file-submits">
               <label> Video File<br/>
               <input type="file" className="video-submit-video-file" placeholder='Video File'
@@ -107,6 +123,7 @@ class VideoForm extends React.Component {
               <input type="file" className="video-submit-thumbnail-file"
                 onChange={this.handleThumbnailFile}/>
               </label>
+            {upload_files_errors()}
             </div>
             <button className = "video-submit">Upload Video</button>
           </form>
