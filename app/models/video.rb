@@ -6,5 +6,6 @@ class Video < ApplicationRecord
   has_one_attached :video_file
 
   belongs_to :uploader, class_name: :User, foreign_key: :uploader_id
+  has_many :comments, foreign_key: :video_id
 
 end
