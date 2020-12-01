@@ -77,6 +77,7 @@ class VideoForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    this.props.clearErrors();
     this.setState({showModal: true});
     if(this.state.videoFile === null)
     {
@@ -117,8 +118,11 @@ class VideoForm extends React.Component {
   render() {
 
     let modalShow = () => {
-      return (this.state.showModal ? (<div>
-        Under construction
+      return (this.state.showModal ? (<div className="upload-background">
+        <div className="upload-modal">
+        <p className="video-submit-text">Uploading "{this.state.title}"</p>
+        <div className="loader"></div>
+        </div>
       </div>) : null)
     }
 

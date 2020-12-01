@@ -2,6 +2,93 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
+.video-submit-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+}
+
+.video-submit-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+
+.video-submit-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 8px;
+  border: 1px solid #dadce0;
+  padding: 20px 10px;
+  width: 420px;
+  height: 450px;
+  margin-top: 150px;
+}
+
+.logo-content-container-submit {
+  padding-right: 0px;
+  padding-top: 10px;
+}
+
+.logo-content-container-submit .nutube-logo {
+  height: 40px;
+  width: 71.1px;
+} 
+
+.logo-content-container-submit .nutube-text {
+  font-family: "PT Sans Narrow", sans-serif;
+  line-height: 40px;
+  font-size: 44px;
+  font-weight: 700;
+  margin-top: 2.5px;
+}
+
+.video-submit-description {
+  font-size: 35px;
+}
+
+
+.video-submit-title {
+  border: 1px solid #dadce0;
+  border-radius: 2px;
+  font-size: 20px;
+  width: 300px;
+  padding: 10px;
+}
+
+.video-submit-file-submits {
+  width: 320px;
+  padding: 10px 0px;
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.video-submit-video-file, .video-submit-thumbnail-file {
+  padding: 15px;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+
+.video-submit {
+  color: white;
+  border-radius: 2px;
+  padding: 6px 10px;
+  font-size: 15px;
+  background:#1a73e8;
+}
+
+.video-submit:hover {
+  background: #1c62b9;
+}
+
 .video-form-errors {
   color: #d50000;
   font-size: 14.5px;
@@ -12,12 +99,41 @@
   text-align: center;
 }
 
+.upload-background {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.upload-modal {
+  padding: 1rem 2rem 2rem 2rem;
+  position: fixed;
+  text-align: center;
+  background-color: #FFFFFF;
+  border: 3px solid #2C353A;
+  margin: 2rem;
+}
+
+.video-submit-text {
+  font-size: 16px;
+  width: 160px;
+  display: inline-block;
+}
+
 .loader {
   border: 16px solid #f3f3f3; /* Light grey */
   border-top: 16px solid #3498db; /* Blue */
   border-radius: 50%;
-  width: 120px;
-  height: 120px;
+  margin: 20px 40px;
+  width: 80px;
+  height: 80px;
   animation: spin 2s linear infinite;
 }
 
