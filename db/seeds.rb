@@ -178,16 +178,6 @@ video17.thumbnail.attach(io: thumb17, filename: 'space.jpg')
 
 # -----------------------------------
 
-video1 = Video.create!({
-  title: "Ghostbusters   Are you God",
-  uploader_id:  hello_world.id
-})
-
-thumb1 = open('https://dackroydisales-nutube-dev.s3-us-west-1.amazonaws.com/thumbnails/Ghostbusters+++Are+you+God.jpg')
-vid1 = open('https://dackroydisales-nutube-dev.s3-us-west-1.amazonaws.com/videos/Ghostbusters+++Are+you+God.mp4')
-video1.video_file.attach(io: vid1, filename: 'ghostbustersareyougod.mp4')
-video1.thumbnail.attach(io: thumb1, filename: 'ghostbustersareyougod.jpg')
-
 video2 = Video.create!({
   title: "Steamed Hams",
   uploader_id:  hello_world.id
