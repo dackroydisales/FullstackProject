@@ -16,6 +16,7 @@ hello_world = User.create!(username: 'hello', email: 'a@z.com', password: 'world
 onepun = User.create!(username: '1punman', email: 'saitama@saitama.com', password: 'password')
 
 Video.delete_all
+Comment.delete_all
 
 # -----------------------------------
 
@@ -42,6 +43,8 @@ thumb4 = open('https://dackroydisales-nutube-dev.s3-us-west-1.amazonaws.com/thum
 vid4 = open('https://dackroydisales-nutube-dev.s3-us-west-1.amazonaws.com/videos/chameleon.mp4')
 video4.video_file.attach(io: vid4, filename: 'chameleon.mp4')
 video4.thumbnail.attach(io: thumb4, filename: 'chameleon.jpg')
+
+comment1 = Comment.create!(comment_txt: "poor bug", video_id: video4.id, user_id: hello_world.id)
 
 # -----------------------------------
 

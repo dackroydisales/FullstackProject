@@ -63,6 +63,11 @@
   padding: 10px;
 }
 
+.video-submit-title:focus {
+  border: 1px solid #1c62b9;
+  border-radius: 2px;
+}
+
 .video-submit-file-submits {
   width: 320px;
   padding: 10px 0px;

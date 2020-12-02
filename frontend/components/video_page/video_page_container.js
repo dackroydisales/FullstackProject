@@ -1,16 +1,21 @@
 import { connect } from 'react-redux';
 import { getVideo } from '../../actions/video_actions';
+import {createComment, getVideoComments} from '../../actions/comment_actions';
 import VideoPage from './video_page';
 
-const mapStateToProps = ({entities: {videos = {} }}) => {
+const mapStateToProps = (state) => {
   return {
-    videos: videos
-  }
+    videos: state.entities.videos,
+    comments: state.entities.comments,
+    userId: state.session.id
+  };
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    getVideo: (videoId) => dispatch(getVideo(videoId))
+    getVideo: (videoId) => dispatch(getVideo(videoId)),
+    createComment: (comment) => dispatch(createComment(comment)),
+    getVideoComments: (videoId) => dispatch(getVideoComments(videoId))
   };
 }
 
