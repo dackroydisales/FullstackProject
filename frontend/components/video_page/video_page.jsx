@@ -62,18 +62,19 @@ class VideoPage extends React.Component {
               onChange={this.handleInput} onFocus={this.checkLogin}/>
           <button className = "video-submit">Comment</button>
           </form>
-          <ul>
+          <ul className="comments">
+            <li>Comments</li>
             {this.props.comments ? 
             Object.values(this.props.comments)
             .reverse().map(comment => 
-            <li>
-              <p>{comment.comment_txt}
-              </p>
-              <p>
+            <li className="comment">
+              <p className="commenter">
                 <button type = 'button' className = 'user-icon user-subicon' >
                   {comment.username.slice(0,1).toUpperCase()}
                 </button>
                 {comment.username}
+              </p>
+              <p className="comment-text">{comment.comment_txt}
               </p>
             </li>)
             : null}

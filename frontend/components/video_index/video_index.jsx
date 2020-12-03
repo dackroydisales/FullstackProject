@@ -7,8 +7,26 @@ class VideoIndex extends React.Component {
   }
 
   componentDidMount(){
-    this.props.getVideoIndex();
+    if(this.props.search)
+    {
+      this.props.getVideoIndex(this.props.search);
+    }
+    else
+    {
+      this.props.getVideoIndex();
+    }
   }
+
+  // componentDidUpdate(){
+  //   if(this.props.search && this.state.prev_search !== this.props.search)
+  //   {
+  //     this.props.getVideoIndex(this.props.search);
+  //   }
+  //   else
+  //   {
+  //     this.props.getVideoIndex();
+  //   }
+  // }
 
   render() {
     let { videos } = this.props;

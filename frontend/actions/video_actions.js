@@ -30,11 +30,12 @@ export const receiveVideoErrors = errors => {
 //thunk action creators
 //AKA TACs
 
-export const getVideoIndex = () => dispatch => {
+export const getVideoIndex = (search) => dispatch => {
   // NB: handle expected signup errors
   return $.ajax({
     method: 'GET',
-    url: '/api/videos'
+    url: '/api/videos',
+    data: {s_term: search}
   }).then(
       videoIndex => dispatch(receiveVideoIndex(videoIndex)));
 };

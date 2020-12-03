@@ -6,6 +6,9 @@ class Api::VideosController < ApplicationController
 
   def index
     @videos = Video.all
+    if(params[:s_term])
+        @videos = @videos.where("title ILIKE ?", "%#{params[:s_term]}%")
+    end
     render :index
   end
 

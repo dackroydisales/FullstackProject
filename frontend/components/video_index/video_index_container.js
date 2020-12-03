@@ -12,7 +12,7 @@ const mS2P = (state) => {
 
 const mD2P = dispatch => {
   return {
-    getVideoIndex: () => dispatch(getVideoIndex())
+    getVideoIndex: (search) => dispatch(getVideoIndex(search))
   };
 }
 
