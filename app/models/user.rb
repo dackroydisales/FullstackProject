@@ -9,8 +9,6 @@ class User < ApplicationRecord
     presence: true, 
     uniqueness: true
 
-  validates_with EmailAddress::ActiveRecordValidator, field: :email
-
   validates :password, length: { minimum: 6 }, allow_nil: true
 
   validates :password_digest, :session_token, presence: true
