@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { getVideo } from '../../actions/video_actions';
-import {createComment, getVideoComments} from '../../actions/comment_actions';
+import {createComment, deleteComment, updateComment, getVideoComments} from '../../actions/comment_actions';
 import VideoPage from './video_page';
 
 const mapStateToProps = (state) => {
@@ -15,7 +15,10 @@ const mapDispatchToProps = dispatch => {
   return {
     getVideo: (videoId) => dispatch(getVideo(videoId)),
     createComment: (comment) => dispatch(createComment(comment)),
+    updateComment: (comment) => dispatch(updateComment(comment)),
+    deleteComment: (comment) => dispatch(deleteComment(comment)),
     getVideoComments: (videoId) => dispatch(getVideoComments(videoId))
+    //update video comment action
   };
 }
 

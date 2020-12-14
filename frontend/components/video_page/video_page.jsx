@@ -1,12 +1,12 @@
 import React from 'react';
 import Navbar from '../splash/navbar';
-
+import Comment from './comment';
 class VideoPage extends React.Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      comment_txt: "",
+      comment_txt: ""
     };
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -67,16 +67,11 @@ class VideoPage extends React.Component {
             {this.props.comments ? 
             Object.values(this.props.comments)
             .reverse().map(comment => 
-            <li className="comment" key={comment.id}>
-              <p className="commenter">
-                <button type = 'button' className = 'user-icon user-subicon' >
-                  {comment.username.slice(0,1).toUpperCase()}
-                </button>
-                {comment.username}
-              </p>
-              <p className="comment-text">{comment.comment_txt}
-              </p>
-            </li>)
+            <Comment key={comment.id} 
+              comment={comment}
+              updateComment={this.props.updateComment}
+              deleteComment={this.props.deleteComment}
+              userId={this.props.userId}/>)
             : null}
           </ul>
           </div>
