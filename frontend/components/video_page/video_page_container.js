@@ -9,7 +9,7 @@ const mapStateToProps = (state) => {
     comments: state.entities.comments,
     userId: state.session.id
   };
-}
+};
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -18,8 +18,7 @@ const mapDispatchToProps = dispatch => {
     updateComment: (comment) => dispatch(updateComment(comment)),
     deleteComment: (comment) => dispatch(deleteComment(comment)),
     getVideoComments: (videoId) => dispatch(getVideoComments(videoId))
-    //update video comment action
   };
-}
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(VideoPage);
