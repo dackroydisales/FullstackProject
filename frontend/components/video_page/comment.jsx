@@ -103,11 +103,13 @@ class Comment extends React.Component {
             {comment.username}
           </p>
           <form onSubmit={this.handleEditSubmit}>
-            <input 
-              type="text" 
-              className="comment-text" 
-              value={this.state.comment_txt}
-              onChange={this.handleInput}/>  
+            <p>
+              <input
+                type="text"
+                className="comment-text"
+                value={this.state.comment_txt}
+                onChange={this.handleInput}/>
+            </p>
             <button type="button" onClick={this.handleCancel}>Cancel</button>
             <button>Edit</button>
           </form>
