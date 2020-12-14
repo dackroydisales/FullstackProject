@@ -157,6 +157,7 @@ span, article, footer, time, small {
   right: 0;
   min-width: 200px;
   background-color: white;
+  z-index: 1;
 }
 
 .user-icon-dropdown li {

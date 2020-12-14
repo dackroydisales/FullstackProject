@@ -6,9 +6,9 @@ const VideoIndexItem = (props) => {
   return (
         <li>
           <Link to={`/videos/${video.id}`}>
-          <img className = "video-thumbnail" src={video.thumbnailURL} />
-          <div className = "video-title-index">{video.title}</div>
-          <div className = "video-uploader-index">{video.uploader}</div>
+            <img className = {props.scrollable ? "video-scroll-thumbnail" : "video-thumbnail"} src={video.thumbnailURL} />
+            <div className =  {props.scrollable ? "video-scroll-title-index" :"video-title-index"}>{video.title}</div>
+            <div className =  {props.scrollable ? "video-scroll-uploader-index" : "video-uploader-index"}>{video.uploader}</div>
           </Link>
         </li>
   )

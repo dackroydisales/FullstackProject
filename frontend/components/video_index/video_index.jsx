@@ -32,11 +32,14 @@ class VideoIndex extends React.Component {
     let { videos } = this.props;
     if(!videos) {return null;}
     return (
-    <ul className="video-index">
+    <div className={this.props.scrollable ? "video-scroll-container" : null}>
+    {this.props.scrollable ? <div className='video-scroll-header'>More Videos</div> : null}
+    <ul className={this.props.scrollable ? "video-scroll" : "video-index"}>
       {Object.values(videos).map(video => (
-        <VideoIndexItem video={video} key={video.title} />
+        <VideoIndexItem video={video} key={video.title} scrollable={this.props.scrollable}/>
       ))}
     </ul>
+    </div>
     )
   }
 
