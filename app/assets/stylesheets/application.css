@@ -33,6 +33,10 @@ span, article, footer, time, small {
   display: flex; 
   align-items: center;
   justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background: #ffffff;
+  z-index: 1;
 }
 
 .logo-content-container-splash {

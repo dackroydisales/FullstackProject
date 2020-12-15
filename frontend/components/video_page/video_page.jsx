@@ -61,7 +61,7 @@ class VideoPage extends React.Component {
 
   render() {
     const video  = this.props.videos[this.props.match.params.videoId];
-    if(video === undefined) {return null;}
+    if(video === undefined) {return (<Navbar/>);}
     return(
       <div className="video-show-page-container">
         <Navbar/>

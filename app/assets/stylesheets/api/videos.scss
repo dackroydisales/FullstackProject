@@ -34,8 +34,6 @@
 .video-show-page-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  overflow: hidden;
 }
 
 .video-show-content{
@@ -43,7 +41,7 @@
   padding: 0;
   margin: 0;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -97,6 +95,62 @@
 .video-description-container {
   margin-top: 20px;
   width: 640px;
+}
+
+@media only screen and (max-width: 1400px) {
+  .video-scroll-container {
+    position: relative;
+    width: 720px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .video-scroll-header {
+    font-size: 32px;
+    padding-bottom: 20px;
+  }
+
+  .video-scroll-thumbnail {
+    height: 360px;
+    width: 640px;
+  }
+
+  .video-scroll-title-index {
+    font-size: 20px;
+    font-weight: bold;
+    max-width: 640px;
+  }
+
+  .video-scroll-uploader-index {
+    font-size: 20px;
+    max-width: 640px;
+    margin-bottom: 15px;
+  }
+
+  .video-index {
+  padding: 0px 32px;
+}
+
+.video-index > li {
+  padding: 20px 60px;
+}
+
+.video-thumbnail {
+  height: 360px;
+  width: 640px;
+}
+
+.video-title-index {
+  font-size: 20px;
+  font-weight: bold;
+  max-width: 640px;
+}
+
+.video-uploader-index {
+  font-size: 20px;
+}
+
 }
 
 .video-title-show {

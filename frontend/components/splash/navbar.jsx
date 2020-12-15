@@ -3,7 +3,10 @@ import Logo from './logo';
 import SearchbarContainer from './searchbar/searchbar_container';
 import GreetingContainer from './greeting/greeting_container';
 
-const Navbar = () => {
+class Navbar extends React.Component {
+
+  render()
+  {
   return (
     <div className = 'nutube-header'>
       <Logo componentName='splash'/>
@@ -11,7 +14,7 @@ const Navbar = () => {
       <GreetingContainer />
     </div>
   )
-
+  }
 }
 
 export default Navbar;
