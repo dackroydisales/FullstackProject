@@ -7,6 +7,7 @@ import SplashPageContainer from './splash/splash_page_container';
 import SearchPageContainer from './search/search_page_container';
 import VideoPageContainer from './video_page/video_page_container'
 import VideoFormContainer from './video_form/video_form_container'
+import About from './about_footer';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 
@@ -21,6 +22,7 @@ const App = () => (
       <Route exact path = "/search/:s_term" component={SearchPageContainer} />
       <Route path = "/" component = {SplashPageContainer} />
     </Switch>
+    <About/>
   </div>
 );
 
