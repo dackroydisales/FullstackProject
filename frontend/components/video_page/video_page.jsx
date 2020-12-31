@@ -17,6 +17,7 @@ class VideoPage extends React.Component {
 
   componentDidMount() {
     this.props.getVideoIndex();
+    this.props.getVideoLikes(this.props.match.params.videoId);
     this.props.getVideoComments(this.props.match.params.videoId);
   }
 
@@ -24,10 +25,11 @@ class VideoPage extends React.Component {
     if(this.state.prev_video !== this.props.match.params.videoId)
     {
       this.props.getVideoComments(this.props.match.params.videoId);
+      this.props.getVideoLikes(this.props.match.params.videoId);
       this.setState({
         prev_video: this.props.match.params.videoId
       });
-     }
+    }
   }
 
 

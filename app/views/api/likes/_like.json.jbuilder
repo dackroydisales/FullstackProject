@@ -1,0 +1,1 @@
+json.extract! like, :id, :is_like, :user_id, :video_id
