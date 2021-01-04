@@ -1,6 +1,7 @@
 import React from 'react';
 import Navbar from '../splash/navbar';
 import Comment from './comment';
+import LikeBar from './like_bar';
 import VideoIndexContainer from '../video_index/video_index_container'
 class VideoPage extends React.Component {
 
@@ -73,6 +74,7 @@ class VideoPage extends React.Component {
             <div className = "video-description-container">
               <div className = "video-title-show">{video.title}</div>
               <div className = "video-uploader-show">{video.uploader}</div>
+              <LikeBar key={this.props.likes} likes={this.props.likes}/>
             </div>
             <form onSubmit={this.handleSubmit}>
             <input type="text" placeholder='Comment' className = "video-submit-title"
