@@ -42,7 +42,7 @@ class UserDropdown extends React.Component {
         <button type = 'button' className='user-icon' onClick = {this.handleButtonClick}>{userFirstLetter}</button>
         {this.state.open && <ul className='user-icon-dropdown'>
           <li><button type = 'button' className = 'user-icon user-subicon' >{userFirstLetter}</button>
-            <p>
+            <p className='dropdown-wrapper'>
               <span className = 'dropdown-username'>{currentUser.username}</span>
               <br /> 
               <span className = 'dropdown-email'>{currentUser.email}</span>

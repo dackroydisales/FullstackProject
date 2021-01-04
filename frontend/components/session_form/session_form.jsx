@@ -68,7 +68,7 @@ class SessionForm extends React.Component{
           <div className="signin-form-fields">
             <br/>
             {this.props.formType === 'signup' ? (
-            <div>
+            <div className="signup-username-wrapper">
               <label>
                 <input type="text" placeholder='Username'
                   value={this.state.username}

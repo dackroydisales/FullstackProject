@@ -10,6 +10,7 @@
   flex-direction: column;
   width: 100vw;
   height: calc(100vh - 20px);
+  background-color: #ffffff;
 }
 
 .signin-form-container {
@@ -22,6 +23,7 @@
   padding: 20px 10px;
   width: 420px;
   height: 450px;
+  background-color: #ffffff;
 }
 
 .signin-form {
@@ -29,6 +31,7 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
+  background-color: #ffffff;
 }
 
 .logo-content-container-signin {
@@ -52,10 +55,16 @@
 .signin-form label, .signin-form span {
   display: flex;
   justify-content: space-between;
+  background-color: #ffffff;
 }
 
 .signin-form-description {
   font-size: 35px;
+  background-color: #ffffff;
+}
+
+.signup-username-wrapper, .signin-form-fields {
+      background-color: #ffffff;
 }
 
 .signin-username, .signin-email, .signin-password {
@@ -64,6 +73,7 @@
   font-size: 14px;
   width: 300px;
   padding: 10px;
+  background-color: #ffffff;
 }
 
 .signin-username:focus, .signin-email:focus, .signin-password:focus {
@@ -100,6 +110,11 @@
   color: #1a73e8;
   padding: 6px;
   font-size: 15px;
+  background-color: #ffffff;
+}
+
+.session-form-link a {
+    background-color: #ffffff;
 }
 
 .session-form-errors {
@@ -108,5 +123,6 @@
   height: 20px;
   margin-left: 5px;
   margin-top: 5px;
+  background-color: #ffffff;
 }
 
