@@ -2,15 +2,27 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+.likebar-container{
+  display: flex;
+  align-items: flex-end;
+}
+
 .likebar-none
 {
   color: #606060;
   font-size: 12px;
+  margin-right: 15px;
 }
 
 .likebar-blue
 {
   color: #0a5ed4;
   font-size: 12px;
+  margin-right: 15px;
 }
 
+.likebar-hand
+{
+  width: 20px;
+  margin-right: 6px;
+}

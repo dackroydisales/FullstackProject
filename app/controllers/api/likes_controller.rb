@@ -4,7 +4,7 @@ class Api::LikesController < ApplicationController
     if like.save
       @likes = Like.all
       if (params[:like][:video_id])
-        @likes = @likes.where(video_id: params[:comment][:video_id])
+        @likes = @likes.where(video_id: params[:like][:video_id])
       end
       render "/api/likes/index"
     else

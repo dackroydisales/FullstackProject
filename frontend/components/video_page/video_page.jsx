@@ -87,7 +87,16 @@ class VideoPage extends React.Component {
             <div className = "video-description-container">
               <div className = "video-title-show">{video.title}</div>
               <div className = "video-uploader-show">{video.uploader}</div>
-              <LikeBar key={this.props.likes} liked={liked} likes={this.props.likes}/>
+              <LikeBar
+              key={this.props.likes} 
+              userId = {this.props.userId}
+              videoId = {this.props.match.params.videoId}
+              history = {this.props.history}
+              createLike = {this.props.createLike}
+              updateLike = {this.props.updateLike}
+              deleteLike = {this.props.deleteLike}
+              liked={liked} 
+              likes={this.props.likes}/>
             </div>
             <form onSubmit={this.handleSubmit}>
             <input type="text" placeholder='Comment' className = "video-submit-title"
