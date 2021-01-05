@@ -15,6 +15,7 @@ class User < ApplicationRecord
 
   has_many :videos, foreign_key: :uploader_id
   has_many :comments, foreign_key: :user_id
+  has_many :likes, foreign_key: :user_id
 
   after_initialize :ensure_session_token
 

@@ -10,7 +10,8 @@ class LikeBar extends React.Component {
     let dislikes = Object.values(prop_likes).filter(like => like.is_like === 0);
     return (<div>
       <span className="likebar-none">{likes.length}</span> 
-      <img className="likebar-hand" src></img>
+      {/* <img className="likebar-hand" src></img> */}
+      <span>{this.props.liked}</span>
       <span className="likebar-none">{dislikes.length}</span>
       </div>);
   }

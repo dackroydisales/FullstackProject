@@ -65,6 +65,19 @@ class VideoPage extends React.Component {
   render() {
     const video  = this.props.videos[this.props.match.params.videoId];
     if(video === undefined) {return (<Navbar/>);}
+    const likes = this.props.likes;
+    let liked = 0;
+    if(likes !== undefined && Object.values(likes).filter(like => like.user_id === this.props.userId))
+    {
+      let user_like = Object.values(likes).filter(like => like.user_id === this.props.userId);
+      if(user_like.length > 0 && user_like[0].is_like === 1)
+      {
+        liked = 1;
+      } else if(user_like.length > 0)
+      {
+        liked = -1;
+      }
+    }
     return(
       <div className="video-show-page-container">
         <Navbar/>
@@ -74,7 +87,7 @@ class VideoPage extends React.Component {
             <div className = "video-description-container">
               <div className = "video-title-show">{video.title}</div>
               <div className = "video-uploader-show">{video.uploader}</div>
-              <LikeBar key={this.props.likes} likes={this.props.likes}/>
+              <LikeBar key={this.props.likes} liked={liked} likes={this.props.likes}/>
             </div>
             <form onSubmit={this.handleSubmit}>
             <input type="text" placeholder='Comment' className = "video-submit-title"
@@ -92,7 +105,7 @@ class VideoPage extends React.Component {
                 userId={this.props.userId}/>)}
             </ul>
           </div>
-          <VideoIndexContainer scrollable="yes"/>
+          <VideoIndexContainer key={this.props.location.pathname} scrollable="yes"/>
         </div>
       </div>
       )
