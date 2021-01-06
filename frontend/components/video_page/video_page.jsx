@@ -83,10 +83,9 @@ class VideoPage extends React.Component {
         <Navbar/>
         <div className='video-show-content'>
           <div className = 'video-show-container'>
-            <video autoPlay controls width="640" height="360" poster = {video.thumbnailURL} className = "video-show" src={video.videoURL} />
+            <video autoPlay controls width="960" height="540" poster = {video.thumbnailURL} className = "video-show" src={video.videoURL} />
             <div className = "video-description-container">
               <div className = "video-title-show">{video.title}</div>
-              <div className = "video-uploader-show">{video.uploader}</div>
               <LikeBar
               key={this.props.likes} 
               userId = {this.props.userId}
@@ -98,6 +97,7 @@ class VideoPage extends React.Component {
               liked={liked} 
               likes={this.props.likes}/>
             </div>
+            <div className = "video-uploader-show">{video.uploader}</div>
             <form onSubmit={this.handleSubmit}>
             <input type="text" placeholder='Comment' className = "video-submit-title"
                 onChange={this.handleInput} onFocus={this.checkLogin}/>

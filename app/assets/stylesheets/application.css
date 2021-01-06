@@ -228,15 +228,15 @@ span, article, footer, time, small {
   display: flex;
   flex-direction: row;
   padding-top: -20px;
-  background: #ffffff;
+  background: #f9f9f9;
 }
 
 .about-footer a {
   margin: 0px 20px;
-  background: #ffffff;
+  background: #f9f9f9;
 }
 
 .about-footer p {
-  background: #ffffff;
+  background: #f9f9f9;
 }
 
