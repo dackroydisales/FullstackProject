@@ -9,7 +9,9 @@ const mapStateToProps = (state) => {
     videos: state.entities.videos,
     comments: state.entities.comments,
     likes: state.entities.likes,
-    userId: state.session.id
+    userId: state.session.id,
+    user: state.entities.users[state.session.id]
+
   };
 };
 

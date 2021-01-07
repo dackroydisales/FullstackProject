@@ -161,14 +161,24 @@
 
 .video-title-show {
   font-size: 26px;
-  padding-bottom: 10px;
+  margin-bottom: 16px;
+}
+
+.video-uploader-container {
+  display: flex;
+  align-items: center;
+  margin-left: 14px;
 }
 
 .video-uploader-show {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
 }
 
+.video-show-divider {
+  border-bottom: 1px solid #cccccc;
+  margin-bottom: 16px;
+}
 
 
 .video-submit-container {

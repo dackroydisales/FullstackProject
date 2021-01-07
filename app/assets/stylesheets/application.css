@@ -163,6 +163,10 @@ span, article, footer, time, small {
   cursor: pointer;
 }
 
+.user-icon-pointer {
+  cursor: default;
+}
+
 .user-icon-dropdown {
   position: absolute;
   top: 100%;
@@ -189,6 +193,7 @@ span, article, footer, time, small {
   padding: 6px;
   border-radius: 23px;
   font-size: 18.4px;
+  font-weight: 400;
   margin: 0 12px 0 0;  
   cursor: default;
 }

@@ -9,11 +9,14 @@ class VideoPage extends React.Component {
     super(props);
     this.state = {
       comment_txt: "",
+      new_comment: false,
       prev_video: this.props.match.params.videoId
     };
     this.handleInput = this.handleInput.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.checkLogin = this.checkLogin.bind(this);
+    this.handleFocus = this.handleFocus.bind(this);
+    this.handleCancel = this.handleCancel.bind(this);
   }
 
   componentDidMount() {
@@ -35,6 +38,7 @@ class VideoPage extends React.Component {
 
 
   handleInput(e) {
+    e.preventDefault();
     this.setState({comment_txt: e.currentTarget.value});
   }
 
@@ -44,6 +48,19 @@ class VideoPage extends React.Component {
     {
       this.props.history.push("/login");
     }
+  }
+
+  handleFocus(e)
+  {
+    e.preventDefault();
+    this.checkLogin();
+    this.setState({new_comment: true});
+  }
+
+  handleCancel(e)
+  {
+    e.preventDefault();
+    this.setState({new_comment: false, comment_txt: ""});
   }
 
   handleSubmit(e)
@@ -57,8 +74,8 @@ class VideoPage extends React.Component {
         user_id: this.props.userId
       }
       this.props.createComment(comment);
-      e.currentTarget.reset();
-      this.setState({comment_txt: ""});
+      document.getElementById("comment-form-text").blur();
+      this.setState({comment_txt: "", new_comment: false});
     }
   }
 
@@ -78,6 +95,9 @@ class VideoPage extends React.Component {
         liked = -1;
       }
     }
+
+    let num_comments = Object.keys(this.props.comments).length;
+
     return(
       <div className="video-show-page-container">
         <Navbar/>
@@ -86,6 +106,10 @@ class VideoPage extends React.Component {
             <video autoPlay controls width="960" height="540" poster = {video.thumbnailURL} className = "video-show" src={video.videoURL} />
             <div className = "video-description-container">
               <div className = "video-title-show">{video.title}</div>
+              <div className="video-uploader-container">
+              <div className="user-icon user-subicon user-icon-pointer">{video.uploader.slice(0,1)}</div>
+              <div className = "video-uploader-show">{video.uploader}</div>
+              </div>
               <LikeBar
               key={this.props.likes} 
               userId = {this.props.userId}
@@ -96,15 +120,37 @@ class VideoPage extends React.Component {
               deleteLike = {this.props.deleteLike}
               liked={liked} 
               likes={this.props.likes}/>
+            <div className="video-show-divider"></div>
             </div>
-            <div className = "video-uploader-show">{video.uploader}</div>
-            <form onSubmit={this.handleSubmit}>
-            <input type="text" placeholder='Comment' className = "video-submit-title"
-                onChange={this.handleInput} onFocus={this.checkLogin}/>
-            <button className = "video-submit">Comment</button>
-            </form>
             <ul className="comments">
-              <li>Comments</li>
+              {
+                num_comments !== 1 ? 
+                <li className="comments-heading">{num_comments} Comments</li> :
+                <li className="comments-heading">1 Comment</li>
+              }
+              <form onSubmit={this.handleSubmit}>
+              <div className="comment-submit-container">
+              {this.props.userId ?
+                <div className="user-icon user-subicon user-icon-pointer">
+                  {this.props.user.username.slice(0,1)}
+                </div> : null}
+                <input type="text" 
+                  id="comment-form-text"
+                  placeholder='Add a public comment...' 
+                  className = "new-comment-submit"
+                  value = {this.state.comment_txt} 
+                  onChange={this.handleInput} 
+                  onFocus={this.handleFocus}/>
+              </div>
+
+                {this.state.new_comment ? 
+                <div className="comment-buttons">
+                  <button type="button" onClick={this.handleCancel} className = "comment-cancel">CANCEL</button>
+                  {this.state.comment_txt === "" ? 
+                  <button className = "comment-submit-disabled" disabled>COMMENT</button> :
+                  <button type="submit" className = "comment-submit">COMMENT</button>}
+                </div>: null}
+              </form>
               {Object.values(this.props.comments)
               .reverse().map(comment => 
               <Comment key={comment.id} 

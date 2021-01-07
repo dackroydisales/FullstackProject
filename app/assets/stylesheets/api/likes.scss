@@ -5,24 +5,34 @@
 .likebar-container{
   display: flex;
   align-items: flex-end;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+  padding-left: 30px;
+}
+
+.likebar-container button {
+  display: flex;
+  align-items: center;
 }
 
 .likebar-none
 {
   color: #606060;
-  font-size: 12px;
+  font-size: 17px;
+  font-weight: 600;
   margin-right: 15px;
 }
 
 .likebar-blue
 {
   color: #0a5ed4;
-  font-size: 12px;
+  font-size: 17px;
+  font-weight: 600;
   margin-right: 15px;
 }
 
 .likebar-hand
 {
-  width: 20px;
-  margin-right: 6px;
+  width: 34px;
+  margin-right: 12px;
 }
