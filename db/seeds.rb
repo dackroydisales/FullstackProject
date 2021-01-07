@@ -32,7 +32,7 @@ vid3 = open('https://dackroydisales-nutube-dev.s3-us-west-1.amazonaws.com/videos
 video3.video_file.attach(io: vid3, filename: 'catsmol.mp4')
 video3.thumbnail.attach(io: thumb3, filename: 'catsmol.jpg')
 
-like4 = Like.create!(is_like: true, video_id: video3.id, user_id: demo.id)
+like4 = Like.create!(is_like: 1, video_id: video3.id, user_id: demo.id)
 
 
 # -----------------------------------
@@ -49,9 +49,9 @@ video4.video_file.attach(io: vid4, filename: 'chameleon.mp4')
 video4.thumbnail.attach(io: thumb4, filename: 'chameleon.jpg')
 
 comment1 = Comment.create!(comment_txt: "poor bug", video_id: video4.id, user_id: hello_world.id)
-like1 = Like.create!(is_like: true, video_id: video4.id, user_id: hello_world.id)
-like2 = Like.create!(is_like: false, video_id: video4.id, user_id: onepun.id)
-like3 = Like.create!(is_like: true, video_id: video4.id, user_id: demo.id)
+like1 = Like.create!(is_like: 1, video_id: video4.id, user_id: hello_world.id)
+like2 = Like.create!(is_like: 0, video_id: video4.id, user_id: onepun.id)
+like3 = Like.create!(is_like: 1, video_id: video4.id, user_id: demo.id)
 
 # -----------------------------------
 
@@ -66,7 +66,7 @@ vid6 = open('https://dackroydisales-nutube-dev.s3-us-west-1.amazonaws.com/videos
 video6.video_file.attach(io: vid6, filename: 'crabs.mp4')
 video6.thumbnail.attach(io: thumb6, filename: 'crabs.jpg')
 
-like5 = Like.create!(is_like: true, video_id: video6.id, user_id: hello_world.id)
+like5 = Like.create!(is_like: 1, video_id: video6.id, user_id: hello_world.id)
 
 # -----------------------------------
 

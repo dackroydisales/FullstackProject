@@ -6,11 +6,11 @@ class About extends React.Component {
     return (
       <div className="about-footer">
         <p>© Daniel Ackroyd-Isales 2020</p>
-        <p>
+        <span>
         <a href="https://www.linkedin.com/in/daniel-ackroyd-isales/" target="_blank">LinkedIn</a>
         <a href="https://github.com/dackroydisales/" target="_blank">Github</a>
         <a href="https://github.com/dackroydisales/nutube" target="_blank">NuTube Repo</a>
-        </p>
+        </span>
       </div>
     )
   }

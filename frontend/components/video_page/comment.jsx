@@ -69,7 +69,7 @@ class Comment extends React.Component {
         <li className="comment" key={comment.id}>
           <p className="commenter">
             <button type = 'button' className = 'user-icon user-subicon' >
-              {comment.username.slice(0,1).toUpperCase()}
+              {comment.username.charAt(0).toUpperCase()}
             </button>
             {comment.username}
           </p>
@@ -82,7 +82,7 @@ class Comment extends React.Component {
         <li className="comment" key={comment.id}>
           <p className="commenter">
             <button type = 'button' className = 'user-icon user-subicon' >
-              {comment.username.slice(0,1).toUpperCase()}
+              {comment.username.charAt(0).toUpperCase()}
             </button>
             {comment.username}
           </p>
@@ -98,7 +98,7 @@ class Comment extends React.Component {
         <li className="comment" key={comment.id}>
           <p className="commenter">
             <button type = 'button' className = 'user-icon user-subicon' >
-              {comment.username.slice(0,1).toUpperCase()}
+              {comment.username.charAt(0).toUpperCase()}
             </button>
             {comment.username}
           </p>

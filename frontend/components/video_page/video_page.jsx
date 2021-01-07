@@ -103,11 +103,14 @@ class VideoPage extends React.Component {
         <Navbar/>
         <div className='video-show-content'>
           <div className = 'video-show-container'>
-            <video autoPlay controls width="960" height="540" poster = {video.thumbnailURL} className = "video-show" src={video.videoURL} />
+            <video autoPlay controls width="960" height="540" 
+              poster = {video.thumbnailURL} className = "video-show" src={video.videoURL} />
             <div className = "video-description-container">
               <div className = "video-title-show">{video.title}</div>
               <div className="video-uploader-container">
-              <div className="user-icon user-subicon user-icon-pointer">{video.uploader.slice(0,1)}</div>
+              <div className="user-icon user-subicon user-icon-pointer">
+                {video.uploader.charAt(0).toUpperCase()}
+              </div>
               <div className = "video-uploader-show">{video.uploader}</div>
               </div>
               <LikeBar
@@ -132,7 +135,7 @@ class VideoPage extends React.Component {
               <div className="comment-submit-container">
               {this.props.userId ?
                 <div className="user-icon user-subicon user-icon-pointer">
-                  {this.props.user.username.slice(0,1)}
+                  {this.props.user.username.charAt(0).toUpperCase()}
                 </div> : null}
                 <input type="text" 
                   id="comment-form-text"
@@ -140,7 +143,8 @@ class VideoPage extends React.Component {
                   className = "new-comment-submit"
                   value = {this.state.comment_txt} 
                   onChange={this.handleInput} 
-                  onFocus={this.handleFocus}/>
+                  onFocus={this.handleFocus}
+                  onBlur={this.handleCancel}/>
               </div>
 
                 {this.state.new_comment ? 
