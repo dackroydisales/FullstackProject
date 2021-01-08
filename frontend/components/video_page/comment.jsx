@@ -26,6 +26,7 @@ class Comment extends React.Component {
       active_editing: true,
       comment_txt: this.props.comment.comment_txt
     });
+
   }
 
   handleInput(e){
@@ -36,14 +37,18 @@ class Comment extends React.Component {
 
   handleEditSubmit(e){
     e.preventDefault();
-    const comment = 
+    if(this.state.comment_txt !== this.props.comment.comment_txt && 
+        this.state.comment_txt !== "")
     {
-      id: this.props.comment.id,
-      comment_txt: this.state.comment_txt,
-      video_id: this.props.comment.video_id,
-      user_id: this.props.comment.user_id
+      const comment = 
+      {
+        id: this.props.comment.id,
+        comment_txt: this.state.comment_txt,
+        video_id: this.props.comment.video_id,
+        user_id: this.props.comment.user_id
+      }
+      this.props.updateComment(comment);
     }
-    this.props.updateComment(comment);
     this.setState({
       active_editing: false,
       comment_txt: ""
@@ -87,9 +92,9 @@ class Comment extends React.Component {
             {comment.username}
           </p>
           <p className="comment-text">{comment.comment_txt}</p>
-        <div>
-          <button onClick={this.handleDelete}>Delete Comment</button>
-          <button onClick={this.handleEdit}>Edit Comment</button>
+        <div className="comment-buttons">
+          <button className = "comment-delete" onClick={this.handleDelete}>DELETE</button>
+          <button className="comment-submit" onClick={this.handleEdit}>EDIT</button>
         </div>
       </li>
       );
@@ -103,15 +108,18 @@ class Comment extends React.Component {
             {comment.username}
           </p>
           <form onSubmit={this.handleEditSubmit}>
-            <p>
-              <input
-                type="text"
-                className="comment-text"
-                value={this.state.comment_txt}
-                onChange={this.handleInput}/>
-            </p>
-            <button type="button" onClick={this.handleCancel}>Cancel</button>
-            <button>Edit</button>
+            <input autoFocus
+              type="text"
+              className="edit-comment-text"
+              value={this.state.comment_txt}
+              placeholder="Add comment text..."
+              onChange={this.handleInput}/>
+            <div className="comment-buttons">
+              <button type="button" className="comment-cancel" onClick={this.handleCancel}>CANCEL</button>
+              {this.state.comment_txt !== this.props.comment.comment_txt && this.state.comment_txt !== "" ?
+              <button className="comment-submit">SAVE</button> :
+              <button type="button" className="comment-submit-disabled" disabled>SAVE</button>}
+            </div>
           </form>
       </li>
       );

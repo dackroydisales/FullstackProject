@@ -74,9 +74,9 @@ class VideoPage extends React.Component {
         user_id: this.props.userId
       }
       this.props.createComment(comment);
-      document.getElementById("comment-form-text").blur();
-      this.setState({comment_txt: "", new_comment: false});
     }
+    document.getElementById("comment-form-text").blur();
+    this.setState({comment_txt: "", new_comment: false});
   }
 
   render() {
@@ -143,16 +143,14 @@ class VideoPage extends React.Component {
                   className = "new-comment-submit"
                   value = {this.state.comment_txt} 
                   onChange={this.handleInput} 
-                  onFocus={this.handleFocus}
-                  onBlur={this.handleCancel}/>
+                  onFocus={this.handleFocus}/>
               </div>
-
                 {this.state.new_comment ? 
                 <div className="comment-buttons">
                   <button type="button" onClick={this.handleCancel} className = "comment-cancel">CANCEL</button>
                   {this.state.comment_txt === "" ? 
-                  <button className = "comment-submit-disabled" disabled>COMMENT</button> :
-                  <button type="submit" className = "comment-submit">COMMENT</button>}
+                  <button type="button" className = "comment-submit-disabled" disabled>COMMENT</button> :
+                  <button className = "comment-submit">COMMENT</button>}
                 </div>: null}
               </form>
               {Object.values(this.props.comments)
