@@ -5,7 +5,7 @@
   <p>NuTube</p>
 </h1>
 
-<a href="dackroydisalesfullstack.herokuapp.com"><h2 align="center">NuTube - A YouTube clone</h2></a>
+<a href="https://itsnutube.herokuapp.com"><h2 align="center">NuTube - A YouTube clone</h2></a>
 
 <p align="center">
   <a href="#Key Features">Key Features</a> •
