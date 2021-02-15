@@ -18,9 +18,17 @@
 
  • User account creation and login
 
+ • Upload your videos to NuTube
+
  • Watch videos
  
- • Upload your videos to NuTube
+ • Search for NuTube videos by title
+ 
+ • Comment on videos (including delete and edit functionality)
+ 
+ • Like/dislike videos
+ 
+ 
 
 
   <img src="video_page.png" alt="Video Page" width="650">
@@ -107,8 +115,5 @@ class UserDropdown extends React.Component {
 
 ## Future Features
 
-  - Search for videos
-  - Comment on videos
-  - Like/dislike videos and comments
   - Display the number of plays for a video
   - Channel pages
